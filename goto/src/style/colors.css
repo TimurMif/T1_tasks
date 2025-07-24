@@ -1,0 +1,8 @@
+:root {
+    --header-bg: #FFE100;
+    --footer-bg: #050505;
+    --primary-bg: rgb(241, 241, 241);
+    --primary-text: black;
+    --secondary-bg: rgb(255, 255, 255);
+    --secondary-text: rgb(143, 143, 143);
+}
