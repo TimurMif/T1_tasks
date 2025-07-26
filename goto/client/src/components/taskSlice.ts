@@ -1,4 +1,3 @@
-// src/components/taskSlice.ts
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import apiClient from '../api/client';
 import { Task, TasksState } from '../types/task';
@@ -10,7 +9,6 @@ const initialState: TasksState = {
   error: null
 };
 
-// Асинхронные операции
 export const fetchTasks = createAsyncThunk('tasks/fetchAll', async () => {
   const response = await apiClient.get('/tasks');
   return response.data;
@@ -37,7 +35,6 @@ const tasksSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // Загрузка задач
       .addCase(fetchTasks.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -52,13 +49,11 @@ const tasksSlice = createSlice({
         state.error = action.error.message || 'Failed to fetch tasks';
       })
       
-      // Создание задачи
       .addCase(createTask.fulfilled, (state, action) => {
         state.tasks.push(action.payload);
         state.nextId = action.payload.id + 1;
       })
       
-      // Обновление задачи
       .addCase(updateTask.fulfilled, (state, action) => {
         const index = state.tasks.findIndex(t => t.id === action.payload.id);
         if (index !== -1) {
@@ -66,7 +61,6 @@ const tasksSlice = createSlice({
         }
       })
       
-      // Удаление задачи
       .addCase(deleteTask.fulfilled, (state, action) => {
         state.tasks = state.tasks.filter(task => task.id !== action.payload);
       });
