@@ -1,0 +1,112 @@
+@import url('colors.css');
+@import url('fonts.css');
+
+.App {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  background-color: var(--header-bg);
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+header img {
+  height: 50%;
+  width: auto;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--footer-bg);
+  height: 8%;
+}
+
+header p, footer p {
+  font-family: 'Roboto-Regular', serif;
+  color: white;
+}
+
+.content-container {
+  background-color: var(--primary-bg);
+  min-height: 84%; 
+}
+
+.info-container {
+  padding-top: 1%;
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.circle-priority {
+  display: inline;
+  background-color: green;
+  aspect-ratio: 1/1;
+  width: 18px;
+  border-radius: 100%;
+}
+
+.info-elem {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.info-elem p{
+  width: auto;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.priority-title {
+  padding-top: 1%;
+  font-family: 'Raleway-Regular', serif;
+  font-size: 1.2rem;
+}
+
+.high {
+  background-color: red;
+}
+
+.medium {
+  background-color: orange;
+}
+
+.low {
+  background-color: lightblue;
+}
+
+@media (width < 900px) {
+  .info-container {
+    width: 50%;
+  }
+}
+
+@media (width < 550px) {
+  .info-container {
+    width: 70%;
+  }
+}
+
+@media (width < 400px) {
+  .info-container {
+    width: 80%;
+  }
+}
+
+
+
