@@ -1,4 +1,4 @@
-# Task Manager Application GoTo
+# Task Manager Application toGo
 
 ## Описание функционала
 
