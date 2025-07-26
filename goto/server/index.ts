@@ -19,12 +19,10 @@ app.use(bodyParser.json());
 let tasks: Task[] = [];
 let nextId = 1;
 
-// Получение всех задач
 app.get('/api/tasks', (req: Request, res: Response) => {
   res.json(tasks);
 });
 
-// Поиск задач по названию и дате
 app.get('/api/tasks/search', (req: Request, res: Response) => {
   const { title, date } = req.query;
   
@@ -45,7 +43,6 @@ app.get('/api/tasks/search', (req: Request, res: Response) => {
   res.json(result);
 });
 
-// Создание задачи
 app.post('/api/tasks', (req: Request, res: Response) => {
   const task: Task = {
     id: nextId++,
@@ -57,7 +54,6 @@ app.post('/api/tasks', (req: Request, res: Response) => {
   res.status(201).json(task);
 });
 
-// Обновление задачи
 app.put('/api/tasks/:id', (req: Request, res: Response) => {
   const id = parseInt(req.params.id);
   const index = tasks.findIndex(task => task.id === id);
@@ -70,7 +66,6 @@ app.put('/api/tasks/:id', (req: Request, res: Response) => {
   res.json(tasks[index]);
 });
 
-// Удаление задачи
 app.delete('/api/tasks/:id', (req: Request, res: Response) => {
   const id = parseInt(req.params.id);
   tasks = tasks.filter(task => task.id !== id);
