@@ -14,19 +14,19 @@
 ## Инструкция по запуску
 
 ### 1. Запуск сервера
-cd server
-npm install
-npm start
+- cd server
+- npm install
+- npm start
 
 ### 1. Запуск клиента
-cd client
-npm install
-npm start
+- cd client
+- npm install
+- npm start
 
 Сервер доступен на http://localhost:3001
 
 Технологии
-UI фреймворк: Material UI
-Бэкенд: REST API, TypeScript
-Фронтенд: React, Redux Toolkit, TypeScript
+- UI фреймворк: Material UI
+- Бэкенд: REST API, TypeScript
+- Фронтенд: React, Redux Toolkit, TypeScript
 
